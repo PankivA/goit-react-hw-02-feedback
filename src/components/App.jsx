@@ -11,7 +11,7 @@ export class App extends Component {
         Bad: 0,
     };
 
-    feedbackButton = buttonValue => {
+    onLeaveFeedback = buttonValue => {
         this.setState(prevState => ({
             [buttonValue]: prevState[buttonValue] + 1,
         }));
@@ -41,7 +41,7 @@ export class App extends Component {
                 <Section title="Please leave feedback">
                     <FeedbackOptions
                         options={['Good', 'Neutral', 'Bad']}
-                        feedbackButton={this.feedbackButton}
+                        onLeaveFeedback={this.onLeaveFeedback}
                     />
                 </Section>
 
@@ -52,7 +52,7 @@ export class App extends Component {
                             neutral={Neutral}
                             bad={Bad}
                             total={totalFeedbacks}
-                            positiveFeedback={positivePercentage}
+                            positivePercentage={positivePercentage}
                         />
                     ) : (
                         <Notification message="There is no feedback" />
