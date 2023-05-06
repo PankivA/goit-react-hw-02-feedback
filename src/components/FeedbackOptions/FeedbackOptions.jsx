@@ -1,14 +1,14 @@
 import React from 'react';
-import css from './OptionButtons.module.css';
+import css from './FeedbackOptions.module.css';
 
-function OptionButtons ({ options, feedbackButton }) {
+function FeedbackOptions ({ options, onLeaveFeedback }) {
     return (
         <div>
             {options.map(option => (
                 <button
                     className={css.button}
                     key={option}
-                    onClick={() => feedbackButton(option)}
+                    onClick={() => onLeaveFeedback(option)}
                 >
                     {option}
                 </button>
@@ -17,4 +17,4 @@ function OptionButtons ({ options, feedbackButton }) {
     );
 }
 
-export default OptionButtons;
+export default FeedbackOptions;
